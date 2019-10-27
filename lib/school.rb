@@ -2,7 +2,7 @@ require 'pry'
 
 class School
 
-  #GRADES = []
+  GRADES = []
 
   def initialize(school)
     @school = school
