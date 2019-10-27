@@ -38,10 +38,12 @@ class School
     #  sorted_names[grade] << students.sort
     #end
     #sorted_names
-    @roster.each do |grade|
-      @roster[grade].sort
+    sorted_names = {}
+    GRADES.each do |grade|
+      sorted_names[grade] = {}
+      sorted_names[grade] = @roster[grade].sort
     end
-    @roster
+    sorted_names
 
   end
 end
