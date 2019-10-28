@@ -17,6 +17,10 @@ class School
 
   def add_student(student_name, grade_number)
     #binding.pry
+    if GRADES.include?(grade_number) == false
+      GRADES << grade_number
+    end
+
     if @roster[grade_number]
       @roster[grade_number] << student_name
     else
@@ -38,12 +42,15 @@ class School
     #  sorted_names[grade] << students.sort
     #end
     #sorted_names
+    # GRADES.each do |grade|
+    #   sorted_names[grade] << @roster[grade].sort
+    # end
+    # sorted_names
+
     sorted_names = {}
-    GRADES.each do |grade|
-      sorted_names[grade] = []
-      sorted_names[grade] << @roster[grade].sort
+    GRADES.each do |grade, students|
+      sorted_names[grade] = @roster[grade].sort
     end
     sorted_names
-
   end
 end
